@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_welcome"
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:id="@+id/textViewTitleDangKi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/allura"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textColor="@color/title"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSoDienThoaiDangKi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:autofillHints="@string/sodienthoai"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:drawableStart="@drawable/ic_user"
+        android:hint="@string/sodienthoai"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTitleDangKi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHoTenDangKi" />
+
+    <EditText
+        android:id="@+id/editTextMatKhauDangKi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/matkhau"
+        android:background="@android:color/white"
+        android:drawableStart="@drawable/ic_pass"
+        android:hint="@string/matkhau"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSoDienThoaiDangKi"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-11dp" />
+
+
+    <EditText
+        android:id="@+id/editTextHoTenDangKi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
+        android:autofillHints="@string/matkhau"
+        android:background="@android:color/white"
+        android:drawableStart="@drawable/ic_user"
+        android:hint="@string/hoten"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleDangKi"
+        tools:layout_editor_absoluteX="60dp" />
+
+    <Button
+        android:id="@+id/buttonDangKiDangKi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@color/gray"
+        android:text="@string/dangkingay"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMatKhauDangKi" />
+
+    <Button
+        android:id="@+id/buttonCancelDangKi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quaylai"
+        android:background="@color/gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDangKiDangKi" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
