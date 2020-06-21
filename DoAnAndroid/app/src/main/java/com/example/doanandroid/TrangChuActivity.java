@@ -71,7 +71,7 @@ public class TrangChuActivity extends AppCompatActivity {
             Fragment fragment;
             switch(item.getItemId()){
                 case R.id.navigation_home:
-                    getSupportActionBar().setTitle("Home");
+     //               getSupportActionBar().setTitle("Home");
                     fragment = new TrangChuFragment();
                     loadFragment(fragment);
                     overridePendingTransition(R.anim.anim_enter,R.anim.anim_enter);
