@@ -48,6 +48,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -69,6 +70,8 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
     RelativeLayout relativeLayout;
     ImageView logo;
     int status = 1; //lưu trạng thái của imageButton showpass
+    ArrayList<KhachHang> arrayListKH;
+    int[] kq ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,10 +209,11 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
                 if(  !validatePassword() | !validatePhoneNo()  ){
                     return;
                 }
-                animateButtonWith();
-                fadeDutTextAndSetProgressDiaDig();
-                nextAction();
+
+                kq = new int[10];
                 DangNhap("https://mylifemrrobot.000webhostapp.com/dangnhap.php");
+
+
               //  startActivity(new Intent(DangNhapActivity.this,TrangChuActivity.class));
                 break;
 //            case R.id.imageViewShowPassDangNhap:
@@ -219,29 +223,41 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void DangNhap(String url) {
+
+
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url,
                     null,
                     new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
-                            //SANPHAMArrayList = new ArrayList<>();
+                            arrayListKH = new ArrayList<>();
                             //Duyệt từng JSON trog mảng
                             for (int i = 0; i < response.length(); i++) {
                                 try {
                                     JSONObject object = response.getJSONObject(i);
-
-
                                     String hoten = object.getString("HOTEN");
                                     Log.d("AAA", hoten + " Tên");
-
-                                    String sodienthoai = object.getString("SODIENTHOAI");
+                                    String sodienthoai = object.getString("SODIENTHOAI").trim();
                                     Log.d("AAA", sodienthoai + " SĐT");
-                                    String matkhau = object.getString("MATKHAU");
+                                    String matkhau = object.getString("MATKHAU").trim();
                                     Log.d("AAA", matkhau + " hinh ta");
-
+                                    arrayListKH.add(new KhachHang(hoten,sodienthoai,matkhau));
                                     //Toast.makeText(MainActivity.this, hoTen + "\n" + namsSinh + "\n" + diaChi, Toast.LENGTH_SHORT).show();
-
+                                    if(object.getString("SODIENTHOAI").trim().equals(edtSoDienThoaiWelcome.getEditText().getText().toString().trim()))
+                                    {
+                                        if(object.getString("MATKHAU").trim().equals(edtMatKhauWelcome.getEditText().getText().toString().trim()))
+                                        {
+                                            animateButtonWith();
+                                            fadeDutTextAndSetProgressDiaDig();
+                                            nextAction();
+                                            break;
+                                        }
+                                        else
+                                            Toast.makeText(DangNhapActivity.this, "Sai mật khẩu", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else
+                                        Toast.makeText(DangNhapActivity.this, "Số điện thoại không chính xác", Toast.LENGTH_SHORT).show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -256,15 +272,7 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
                             Log.d("AAA",error.toString());
                             Toast.makeText(DangNhapActivity.this, error.toString()+"đÂY LÀ LỖI", Toast.LENGTH_SHORT).show();
                                                 }
-                    }){
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String,String> params = new HashMap<>();
-                    params.put("SODIENTHOAI",edtSoDienThoaiWelcome.getEditText().getText().toString());
-                    params.put("MATKHAU",edtMatKhauWelcome.getEditText().getText().toString());
-                    return params;
-                }
-            };
+                    });
             requestQueue.add(jsonArrayRequest);
 
 
