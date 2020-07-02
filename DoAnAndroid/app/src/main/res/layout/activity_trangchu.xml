@@ -1,46 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrangChuActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="40dp"
-        android:id="@+id/tabLayoutTrangChu"
+    <RelativeLayout
+        android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        app:tabIndicatorColor="@color/black"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="#7A0101"
-        app:tabTextColor="#FFFFFF">
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:background="@color/While"
+       >
 
-    </com.google.android.material.tabs.TabLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LUXURY MEN"
+            android:textColor="#FF0000"
+            android:fontFamily="@font/bangers"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            />
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"
+            android:layout_marginTop="40dp"
+            android:id="@+id/search">
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_marginTop="60dp"
-        android:id="@+id/viewPagerTrangChu"
+        </ImageView>
+
+
+    </RelativeLayout>
+
+    <include
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="@color/black"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/home_menu"
+        android:layout_below="@+id/relative"
+        android:id="@+id/llBanner"
+        layout="@layout/layout_banner"
         />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list1"
+        android:layout_below="@+id/llBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"/>
+
+    <FrameLayout
+     android:layout_below="@+id/list1"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/navigation"
+        app:mbn_backgroundBottomColor="#ffff"
+        app:mbn_countBackgroundColor="#673AB7"
+        app:mbn_selectedIconColor="#2196F3"
+        >
+
+    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>
+
+</RelativeLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

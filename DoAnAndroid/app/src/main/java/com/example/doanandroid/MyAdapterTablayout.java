@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.doanandroid.Frament.QuanJeanFragment;
+import com.example.doanandroid.Frament.TrangChuFragment;
+
 public class MyAdapterTablayout extends FragmentStatePagerAdapter {
     private String listTab[] = {"Quần Jean","Áo Sơ Mi"};
     private TrangChuFragment trangChuFragment;

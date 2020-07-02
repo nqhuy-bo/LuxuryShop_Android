@@ -10,10 +10,12 @@
         android:label="@string/luxuryman"
         android:roundIcon="@mipmap/ic_logods"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.FullScreen">
+        android:theme="@style/AppTheme.FullScreen"
+        android:usesCleartextTraffic="true">
 
+        <activity android:name=".TrangChuActivity"
 
-        <activity android:name=".TrangChuActivity"></activity>
+            ></activity>
         <activity android:name=".DangNhapActivity"
             android:theme="@style/AppTheme.FullScreen1"/>
         <activity android:name=".DangKiActivity"
