@@ -1,40 +1,51 @@
 package com.example.doanandroid;
 
 import java.io.Serializable;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public class KhachHang implements Serializable {
-    private String hoTen,soDienThoai,matKhau;
+public class KhachHang {
+    @Expose
+    @SerializedName("HOTEN")
+    private String HOTEN;
+    @Expose
+    @SerializedName("SODIENTHOAI")
+    private String SODIENTHOAI;
+    @Expose
+    @SerializedName("MATKHAU")
+    private String MATKHAU;
+
 
     public KhachHang() {
     }
 
-    public KhachHang(String hoTen, String soDienThoai, String matKhau) {
-        this.hoTen = hoTen;
-        this.soDienThoai = soDienThoai;
-        this.matKhau = matKhau;
+    public KhachHang(String HOTEN, String SODIENTHOAI, String MATKHAU) {
+        this.HOTEN = HOTEN;
+        this.SODIENTHOAI = SODIENTHOAI;
+        this.MATKHAU = MATKHAU;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getHOTEN() {
+        return HOTEN;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setHOTEN(String HOTEN) {
+        this.HOTEN = HOTEN;
     }
 
-    public String getSoDienThoai() {
-        return soDienThoai;
+    public String getSODIENTHOAI() {
+        return SODIENTHOAI;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
+    public void setSODIENTHOAI(String SODIENTHOAI) {
+        this.SODIENTHOAI = SODIENTHOAI;
     }
 
-    public String getMatKhau() {
-        return matKhau;
+    public String getMATKHAU() {
+        return MATKHAU;
     }
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+    public void setMATKHAU(String MATKHAU) {
+        this.MATKHAU = MATKHAU;
     }
 }

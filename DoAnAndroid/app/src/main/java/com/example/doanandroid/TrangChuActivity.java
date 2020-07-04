@@ -157,8 +157,8 @@ public class TrangChuActivity extends AppCompatActivity {
     private void AnhXa() {
         bannerSlider = findViewById(R.id.sliderView);
         mLinearLayout = findViewById(R.id.pagesContainer);
-        benner = (LinearLayout) findViewById(R.id.llBanner);
-        search = (RelativeLayout) findViewById(R.id.relative);
+        benner =  findViewById(R.id.llBanner);
+        search =  findViewById(R.id.relative);
         mList1 = findViewById(R.id.list1);
 
     }

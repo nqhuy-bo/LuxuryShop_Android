@@ -55,9 +55,6 @@ public class DangKiActivity extends AppCompatActivity {
                             DangKiThanhVien(url);
                         }
 
-
-
-
             }
         });
     }

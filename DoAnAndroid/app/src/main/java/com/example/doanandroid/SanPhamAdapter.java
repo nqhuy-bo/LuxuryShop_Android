@@ -50,7 +50,7 @@ public class SanPhamAdapter extends BaseAdapter {
 
 
     public static class ViewHolder{
-        TextView txtTenSP,txtMoTaSP,txtGia;
+        TextView txtTenSP,txtGia;
         ImageView imgHinhSP;
 
     }
@@ -62,7 +62,6 @@ public class SanPhamAdapter extends BaseAdapter {
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(layout,null);
             holder.txtTenSP =convertView.findViewById(R.id.textViewImageTrangChu);
-            holder.txtMoTaSP = convertView.findViewById(R.id.textViewMoTaItemTrangChu);
             holder.txtGia = convertView.findViewById(R.id.textViewGiaTrangChu);
             holder.imgHinhSP = convertView.findViewById(R.id.imageViewItemTrangChu);
 
@@ -76,7 +75,6 @@ public class SanPhamAdapter extends BaseAdapter {
         SanPham sanPham =sanPhamList.get(position);
         holder.txtTenSP.setText(sanPham.getTENSANPHAM());
         holder.txtGia.setText(sanPham.getGIA()+"VNĐ");
-        holder.txtMoTaSP.setText(sanPham.getMOTASANPHAM());
         Picasso.with(context)
                 .load(sanPham.getHINHANH())
                 .placeholder(R.drawable.ic_wait)

@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/ic_khung">
     <ImageView
         android:id="@+id/imageViewItemTrangChu"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="170dp"
+        android:layout_height="140dp"/>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="6dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:orientation="horizontal">
+
+    <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="52dp"
+            android:orientation="vertical"
+
+        android:layout_marginStart="8dp">
         <TextView
             android:id="@+id/textViewImageTrangChu"
-            android:textSize="20sp"
+            android:layout_marginTop="4dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_width="160dp"
-            android:layout_height="26dp"/>
+            android:layout_width="180dp"
+            android:layout_height="20dp"
+            android:textAlignment="center"/>
         <TextView
             android:id="@+id/textViewGiaTrangChu"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="140dp"
-            android:layout_height="26sp"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/textViewMoTaItemTrangChu"
+            android:layout_marginTop="4dp"
+
+            android:textColor="#000000"
             android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="74dp"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:textStyle="bold"
+            android:layout_width="180dp"
+            android:layout_height="20sp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

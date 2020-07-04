@@ -1,5 +1,6 @@
 package com.example.doanandroid.Frament;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,7 +41,7 @@ import java.util.ArrayList;
  */
 public class TrangChuFragment extends Fragment {
 
-    ListView listView;
+    GridView gridViewHomeFragment;
     ArrayList<SanPham> arrayList;
     SanPhamAdapter adapter;
     public TrangChuFragment() {
@@ -58,12 +60,28 @@ public class TrangChuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listView = view.findViewById(R.id.listViewItemHome);
+        gridViewHomeFragment = view.findViewById(R.id.gridViewHomeFragment);
         String url = "https://mylifemrrobot.000webhostapp.com/getdata.php";
 
         arrayList = new ArrayList<>();
         adapter = new SanPhamAdapter(getContext(),R.layout.custom_dong_sanpham,arrayList);
-        listView.setAdapter(adapter);
+        gridViewHomeFragment.setAdapter(adapter);
+        gridViewHomeFragment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SanPham sp ;
+                Intent intent = new Intent(getActivity(),ActivityDetail.class);
+                sp= arrayList.get(position);
+                intent.putExtra("MASP",sp.getMASANPHAM());
+                intent.putExtra("TENSP",sp.getTENSANPHAM());
+                intent.putExtra("GIA",sp.getGIA());
+                intent.putExtra("HINH",sp.getHINHANH());
+                intent.putExtra("MALOAI",sp.getMALOAI());
+                intent.putExtra("MOTA",sp.getMOTASANPHAM());
+                startActivity(intent);
+                Toast.makeText(getContext(), ""+sp.getTENSANPHAM(), Toast.LENGTH_SHORT).show();
+            }
+        });
         getData(url);
 
     }

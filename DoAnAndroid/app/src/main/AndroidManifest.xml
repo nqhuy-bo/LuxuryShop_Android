@@ -13,20 +13,22 @@
         android:theme="@style/AppTheme.FullScreen"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".TrangChuActivity"
-
-            ></activity>
+        <activity android:name=".TrangChuActivity"/>
+        <activity android:name=".Frament.ActivityDetail"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".DangNhapActivity"
-            android:theme="@style/AppTheme.FullScreen1"/>
-        <activity android:name=".DangKiActivity"
-            android:theme="@style/AppTheme.FullScreen1"/>
-        <activity android:name=".WellCome"
-            >
+            android:theme="@style/AppTheme.FullScreen1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".DangKiActivity"
+            android:theme="@style/AppTheme.FullScreen1"/>
+        <activity android:name=".WellCome"
+            >
+
         </activity>
 
         <activity
