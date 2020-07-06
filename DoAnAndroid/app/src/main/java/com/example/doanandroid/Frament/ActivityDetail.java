@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,7 +21,9 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
 
     ImageView imgHinhDetail;
     TextView txtGiaDetail,txtTenDetail,txtMoTaDetail;
-    EditText edtSoLuongDetail;
+    TextView edtSoLuongDetail;
+    Animation topAnim, bottomAnim;
+    androidx.cardview.widget.CardView cardView;
     ImageButton btnCongDetail,btnTruDetail;
     int MASP = -1;
     int MALOAI = -1;
@@ -32,12 +36,19 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_detail);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
         AnhXa();
         LoadDataFromIntent();
-        getSupportActionBar().setTitle("Chi tiết sản phẩm");
+//        getSupportActionBar().setTitle("Chi tiết sản phẩm");
         XuLyClick();
+
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+
+
+
+
+       cardView.setAnimation(bottomAnim);
 
     }
 
@@ -71,6 +82,7 @@ public class ActivityDetail extends AppCompatActivity implements View.OnClickLis
         edtSoLuongDetail = findViewById(R.id.editTextSoLuongDetail);
         btnCongDetail = findViewById(R.id.imageButtonCongDetail);
         btnTruDetail = findViewById(R.id.imageButtonTruDetail);
+        cardView = findViewById(R.id.cardView);
     }
 
     @Override

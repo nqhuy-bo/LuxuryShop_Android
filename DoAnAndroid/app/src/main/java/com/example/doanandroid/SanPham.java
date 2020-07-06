@@ -17,6 +17,10 @@ public class SanPham implements Serializable {
 
     public SanPham() {
     }
+    public void changeText1(String text)
+    {
+        this.TENSANPHAM = text;
+    }
 
     public int getMASANPHAM() {
         return MASANPHAM;

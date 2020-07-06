@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="#32E4E2E2"
     tools:context=".TrangChuActivity">
 
     <RelativeLayout
@@ -39,38 +42,73 @@
 
     </RelativeLayout>
 
+    <ScrollView
+android:layout_below="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    >
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/relative"
+
         android:id="@+id/llBanner"
         layout="@layout/layout_banner"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list1"
-        android:layout_below="@+id/llBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"/>
 
-    <FrameLayout
-     android:layout_below="@+id/list1"
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Sản phẩm"
+         android:textColor="@drawable/bt"
+         android:textSize="25sp"
+         android:fontFamily="@font/antic"
+         android:layout_gravity="center"
+
+         />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:background="#00FFFFFF"
+
+        />
+
+
+
+
+</LinearLayout>
+    </ScrollView>
+
+   <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/navigation"
         app:mbn_backgroundBottomColor="#ffff"
         app:mbn_countBackgroundColor="#673AB7"
         app:mbn_selectedIconColor="#2196F3"
+        android:layout_alignParentBottom="true"
         >
 
     </com.etebarian.meowbottomnavigation.MeowBottomNavigation>
+
 
 </RelativeLayout>
 
