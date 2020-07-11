@@ -71,6 +71,7 @@ dependencies {
 
     // palatte
     implementation 'androidx.palette:palette:1.0.0'
+    implementation 'me.gujun.android.taggroup:library:1.4@aar'
 
 
 }

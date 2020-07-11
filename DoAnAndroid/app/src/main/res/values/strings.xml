@@ -20,6 +20,11 @@
     <string name="menu3">Menu 3</string>
     <string name="menu4">Menu 4</string>
     <string name="sodienthoai">Số điện thoại</string>
+    <string name="giohangtrong">Giỏ hàng bạn đang trống</string>
+    <string name="tongtien">Tổng tiền : </string>
+    <string name="giatri">Giá Trị</string>
+    <string name="thanhtoan">THANH TOÁN </string>
+    <string name="tieptucmua">TIẾP TỤC MUA HÀNG</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,10 +1,40 @@
 package com.example.doanandroid;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class SanPham implements Serializable {
-    int MASANPHAM,MALOAI,GIA;
-    String TENSANPHAM,MOTASANPHAM,HINHANH;
+
+    @Expose
+    @SerializedName("TENSANPHAM")
+    String TENSANPHAM;
+    @Expose
+    @SerializedName("MOTASANPHAM")
+    String MOTASANPHAM;
+
+    @Expose
+    @SerializedName("HINHANH")
+    String HINHANH;
+
+    @Expose
+    @SerializedName("MASANPHAM")
+    int MASANPHAM;
+
+    @Expose
+    @SerializedName("MALOAI")
+    int MALOAI;
+
+    @Expose
+    @SerializedName("GIA")
+    int GIA;
+
+    @Expose
+    @SerializedName("SOLUONG")
+    int SOLUONG;
+
+
 
     public SanPham(int MASANPHAM, int MALOAI, int GIA, String TENSANPHAM, String MOTASANPHAM, String HINHANH) {
         this.MASANPHAM = MASANPHAM;
@@ -13,6 +43,23 @@ public class SanPham implements Serializable {
         this.TENSANPHAM = TENSANPHAM;
         this.MOTASANPHAM = MOTASANPHAM;
         this.HINHANH = HINHANH;
+    }
+
+    public SanPham(int MASANPHAM, String TENSANPHAM, String MOTASANPHAM, String HINHANH,int GIA,int SOLUONG) {
+        this.MASANPHAM = MASANPHAM;
+        this.TENSANPHAM = TENSANPHAM;
+        this.MOTASANPHAM = MOTASANPHAM;
+        this.HINHANH = HINHANH;
+        this.GIA = GIA;
+        this.SOLUONG = SOLUONG;
+    }
+
+    public int getSOLUONG() {
+        return SOLUONG;
+    }
+
+    public void setSOLUONG(int SOLUONG) {
+        this.SOLUONG = SOLUONG;
     }
 
     public SanPham() {

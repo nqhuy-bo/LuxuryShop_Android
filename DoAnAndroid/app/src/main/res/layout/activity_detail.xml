@@ -16,7 +16,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/a1"
+        android:id="@+id/imageViewQuayLai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -27,7 +27,7 @@
    />
 
     <ImageView
-        android:id="@+id/a2"
+        android:id="@+id/imageViewMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -35,7 +35,7 @@
         android:background="@drawable/dot"
         android:layout_alignParentRight="true" />
     <ImageView
-        android:id="@+id/a3"
+        android:id="@+id/imageViewGioHang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -106,50 +106,46 @@
 
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Số lượng :"
-            android:textColor="#000000"
-            android:fontFamily="@font/antic"
-            android:textSize="30sp"
-            />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Số lượng :"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/antic"
+                        android:textSize="30sp"
+                        />
 
-        <ImageButton
-            android:id="@+id/imageButtonCongDetail"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/add"
-            android:layout_marginRight="8dp"/>
+                        <ImageButton
+                            android:id="@+id/imageButtonCongDetail"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/add"
+                            android:layout_marginRight="8dp"/>
 
-        <TextView
-            android:id="@+id/editTextSoLuongDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:text="0"
-            android:textColor="#111111"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/editTextSoLuongDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:text="0"
+                            android:textColor="#111111"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imageButtonTruDetail"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
+                        <ImageButton
+                            android:id="@+id/imageButtonTruDetail"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="12dp"
 
-            android:background="@drawable/minus" />
-
-
-
-
+                            android:background="@drawable/minus" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -161,7 +157,7 @@
                     >
 
                     <Button
-
+                        android:id="@+id/buttonMuaNgayDetail"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btvuong"
@@ -174,7 +170,7 @@
 
                         />
                     <Button
-
+                        android:id="@+id/buttonThemVaoGioDetail"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btvuong"

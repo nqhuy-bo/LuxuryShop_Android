@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarGioHang"
+        app:title="Giỏ hàng"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_weight="7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textViewTrangThaiGioHang"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/giohangtrong"
+                android:textColor="#000000"
+                android:textSize="26sp"/>
+            <ListView
+                android:id="@+id/listViewGioHang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textViewTongTien"
+            android:text="@string/tongtien"
+            android:textSize="30sp"
+            android:textColor="#FF0000"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textViewGiaTri"
+            android:text="@string/giatri"
+            android:textAlignment="textEnd"
+            android:textSize="30sp"
+            android:textColor="#FF0000"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/buttonThanhToanGioHang"
+        android:text="@string/thanhtoan"
+        android:textSize="30sp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+    <Button
+        android:id="@+id/buttonTiepTucMua"
+        android:text="@string/tieptucmua"
+        android:textSize="30sp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+</LinearLayout>

@@ -20,6 +20,7 @@ public class WellCome extends AppCompatActivity {
     TextView logo;
     Animation topAnim, bottomAnim;
     private static int SPLASH_SCREEN = 2500;
+    public static DataBase data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,9 @@ public class WellCome extends AppCompatActivity {
 
         image.setAnimation(topAnim);
         logo.setAnimation(bottomAnim);
-ChuyenActivity();
+        data = new DataBase(this,"Luxury.sqlite",null,1);
+        data.QueryData("CREATE TABLE IF NOT EXISTS GIOHANG (ID INTEGER PRIMARY KEY AUTOINCREMENT,MASANPHAM INTEGER, TENSANPHAM VARCHAR(250),MOTASANPHAM VARCHAR(250), HINHANH VARCHAR(250), GIA VARCHAR(250),SOLUONG INTEGER)");
+        ChuyenActivity();
 
     }
 

@@ -222,15 +222,14 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void DangNhap() {
-
-
-        Call<List<KhachHang>> studentModelCall=apiInterface.loginUser(edtSoDienThoaiWelcome.getEditText().getText().toString(),
+        Call<List<KhachHang>> khachHang=apiInterface.loginUser(edtSoDienThoaiWelcome.getEditText().getText().toString(),
                 edtMatKhauWelcome.getEditText().getText().toString());
-        studentModelCall.enqueue(new Callback<List<KhachHang>>() {
+        khachHang.enqueue(new Callback<List<KhachHang>>() {
             @Override
             public void onResponse(Call<List<KhachHang>> call, Response<List<KhachHang>> response) {
                 if(response.body().size()!=0)
                 {
+                    Toast.makeText(DangNhapActivity.this, ""+response.body().get(0).getHOTEN(), Toast.LENGTH_SHORT).show();
                     //Code xử lý lấy thông tin về tài khoản
                     // khi response trả về một mảng các StudentModel
                     Toast.makeText(DangNhapActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();

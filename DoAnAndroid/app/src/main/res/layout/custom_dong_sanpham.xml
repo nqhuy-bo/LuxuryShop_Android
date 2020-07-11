@@ -3,24 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/ic_khung">
+    android:orientation="horizontal">
     <ImageView
-        android:id="@+id/imageViewItemTrangChu"
-        android:layout_marginStart="8dp"
+        android:id="@+id/imageViewItemGioHang"
         android:layout_marginTop="8dp"
-        android:layout_width="170dp"
-        android:layout_height="140dp"/>
+        android:layout_marginStart="8dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
 
 
     <LinearLayout
-            android:layout_width="180dp"
-            android:layout_height="52dp"
-            android:orientation="vertical"
+            android:layout_width="260dp"
 
-        android:layout_marginStart="8dp">
+            android:layout_marginTop="8dp"
+            android:layout_height="100dp"
+            android:orientation="vertical">
         <TextView
-            android:id="@+id/textViewImageTrangChu"
+            android:id="@+id/textViewTenSPGioHang"
             android:layout_marginTop="4dp"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -29,7 +28,7 @@
             android:layout_height="20dp"
             android:textAlignment="center"/>
         <TextView
-            android:id="@+id/textViewGiaTrangChu"
+            android:id="@+id/textViewGiaGioHang"
             android:layout_marginTop="4dp"
 
             android:textColor="#000000"
@@ -38,7 +37,22 @@
             android:layout_width="180dp"
             android:layout_height="20sp"
             android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/textViewSoLuongGioHang"
+            android:text="Số lượng"
+            android:layout_gravity="center"
+            android:textColor="#111111"
+            android:layout_width="180dp"
+            android:layout_height="30sp"/>
+
     </LinearLayout>
+    <Button
+        android:id="@+id/buttonXoaSPGioHang"
+        android:layout_marginTop="30dp"
+        android:layout_width="26dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_trash"
+        />
 
 
 
